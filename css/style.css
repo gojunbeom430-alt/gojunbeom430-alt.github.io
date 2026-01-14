@@ -18,11 +18,16 @@ h4 {
     margin-bottom: 30px;
 }
 .jumbotron {
-    background-color: #abdeeb;
-    color: #100124;
-    padding: 100px 25px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 800;
+    background: linear-gradient(135deg, #7fc4e4 0%, #4b53c0 100%); /* 하늘색에서 보라빛 파란색으로 */
+    color: #ffffff !important; /* 글자색을 흰색으로 고정 */
+    padding: 150px 25px;       /* 위아래 여백을 더 줘서 웅장하게 */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.jumbotron p {
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 30px;
 }
 .container-fluid {
     padding: 60px 50px;
@@ -41,7 +46,7 @@ h4 {
 .thumbnail {
     padding: 0 0 15px 0;
     border: none;
-    border-radius: 0;
+    border-radius: 20px;
 }
 .thumbnail img {
     width: 100%;
@@ -69,12 +74,14 @@ h4 {
     font-style: normal;
 }
 .panel {
-    border: 1px solid #6899b6;
-    border-radius:0 !important;
-    transition: box-shadow 0.5s;
+    border: none !important;      
+    border-radius: 20px !important; 
+    box-shadow: 0 4px 10px rgba(2, 6, 36, 0.2); 
+    transition: all 0.5s;
+    overflow: hidden;             
 }
 .panel:hover {
-    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+    box-shadow: 5px 0px 40px rgba(0,0,0, .1);
 }
 .panel-footer .btn:hover {
     border: 1px solid #424caa;
@@ -86,8 +93,8 @@ h4 {
     background-color: #b3e9f0 !important;
     padding: 25px;
     border-bottom: 1px solid transparent;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
 }
@@ -111,18 +118,23 @@ h4 {
     background-color: #7fc4e4;
     z-index: 9999;
     border: 0;
-    font-size: 12px !important;
+    font-size: 14px !important; /* 크기 상향 */
     line-height: 1.42857143 !important;
-    letter-spacing: 4px;
+    letter-spacing: 1px;       /* 너무 넓지 않게 조정 */
     border-radius: 0;
-    font-family: Montserrat, sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;          /* 글씨 두께감 추가 */
 }
+
 .navbar li a, .navbar .navbar-brand {
     color: #0c0c0c !important;
+    padding-top: 20px !important;    /* 위아래 높이 조절 */
+    padding-bottom: 20px !important;
 }
+
 .navbar-nav li a:hover, .navbar-nav li.active a {
-    color: #398bc2 !important;
-    background-color: #fff !important;
+    color: #ffffff !important;      /* 마우스 올리면 흰색으로 */
+    background-color: #4b53c0 !important; /* 강조 색상은 아래 섹션과 통일 */
 }
 .navbar-default .navbar-toggle {
     border-color: transparent;
@@ -140,6 +152,110 @@ footer .glyphicon {
     animation-duration: 1s;
     -webkit-animation-duration: 1s;
     visibility: visible;
+}
+/* 새로운 강점 카드 스타일 */
+.strength-card {
+    background-color: #ffffff !important; /* 배경 흰색 */
+    border: none !important;              /* 테두리 선 절대 금지 */
+    border-radius: 20px !important;       /* 모서리 둥글게 */
+    padding: 40px 20px !important;        /* 안쪽 여백 충분히 (글씨가 박스 안에 있게 함) */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* 선 대신 부드러운 그림자 */
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    min-height: 250px;                    /* 박스 높이 일정하게 */
+    display: block;                       /* 구조 확실히 잡기 */
+}
+
+/* 마우스 올렸을 때 효과 */
+.strength-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* 아이콘 스타일 */
+.strength-card .logo-small {
+    font-size: 50px;
+    color: #4c5cf0 !important;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* 박스 안의 제목 */
+.strength-card h4 {
+    color: #333 !important;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* 박스 안의 설명 */
+.strength-card p {
+    color: #666 !important;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* 프로젝트 카드 스타일 */
+.project-card {
+    background-color: #ffffff !important;
+    border: none !important;           /* 테두리 선 삭제 */
+    border-radius: 20px !important;    /* 모서리 둥글게 */
+    overflow: hidden;                  /* 이미지가 모서리 밖으로 안 나가게 */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important; /* 은은한 그림자 */
+    transition: 0.3s;
+    margin-bottom: 30px;
+}
+
+/* 마우스 올렸을 때 효과 */
+.project-card:hover {
+    transform: translateY(-10px);      /* 위로 슥 올라감 */
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15) !important;
+}
+
+/* 카드 내부 텍스트 영역 */
+.project-caption {
+    padding: 20px;
+    text-align: center;
+}
+
+.project-caption h4 {
+    color: #4b53c0 !important;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.project-caption p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Inspiration 텍스트 정중앙 정렬 */
+.carousel-inner .item {
+    text-align: center; /* 가로 중앙 */
+}
+
+.inspiration-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 세로 중앙 */
+    align-items: center;     /* 가로 중앙 */
+    min-height: 250px;       /* 슬라이더 높이 확보 */
+    padding: 0 15px;
+}
+
+.item h4 {
+    margin: 0 !important;      /* 기존 마진(70px 0)을 완전히 제거 */
+    width: 100% !important;    /* 너비를 꽉 채워 중앙 정렬 보장 */
+    line-height: 1.6 !important;
+    font-size: 20px !important;
+    display: inline-block !important;
+}
+
+.item h4 span {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #4b53c0;
 }
 @keyframes slide {
     0% {
