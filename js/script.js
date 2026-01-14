@@ -44,7 +44,7 @@ $(document).ready(function() {
 
         // 1. 빈칸 검사 (Validation)
         if (name === "" || email === "" || comments === "") {
-            alert("이름, 이메일, 그리고 내용을 모두 입력해주세요!");
+            alert("이름, 이메일, 그리고 내용을 모두 입력해주세요.");
             return; // 전송 중단
         }
 
